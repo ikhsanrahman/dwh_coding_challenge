@@ -4,9 +4,9 @@ import pandas as pd
 import glob
 from data import *
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # set max column to be viewed
-    pd.set_option('display.max_columns', None)
+    pd.set_option("display.max_columns", None)
 
     print(PATH_FILE)
 
