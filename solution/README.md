@@ -29,4 +29,4 @@ any programming language and any framework to implement the solution.
    ​	**SOLUTION** :
 
     - can be seen in column `datetime` that there are 7 transactions between 2 January 2020 to 20 January 2020.
-    <img src="result.png" alt="" style="height: 100px; width:100px;"/>
+    <img src="result.png" alt="" style="height: 100%; width:100%;"/>
