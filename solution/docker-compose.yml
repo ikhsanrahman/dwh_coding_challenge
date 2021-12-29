@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+    dkatalis_test:
+        image: dkatalis_test
+        logging:
+          driver: "json-file"
+          options:
+            max-size: "200k"
+            max-file: "10"
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - ./shared:/data
+
+volumes:
+  shared:
