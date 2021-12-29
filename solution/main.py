@@ -5,7 +5,7 @@ import glob
 from data import *
 
 if __name__ == '__main__':
-    set max column to be viewed
+    # set max column to be viewed
     pd.set_option('display.max_columns', None)
 
     print(PATH_FILE)
@@ -26,19 +26,19 @@ if __name__ == '__main__':
     dfs_cards = []
     dfs_savings_accounts = []
 
-    # # READ ACCOUNTS #
+    # Read accounts and normalize the data #
     for file in file_list_accounts:
         with open(file) as f:
             json_data = pd.json_normalize(json.loads(f.read()))
         dfs_accounts.append(json_data)
 
-    # # READ CARDS #
+    # Read card and normalize the data #
     for file in file_list_cards:
         with open(file) as f:
             json_data = pd.json_normalize(json.loads(f.read()))
         dfs_cards.append(json_data)
 
-    # # READ SAVING ACCOUNTS #
+    # Read saving_accounts and normalize the data #
     for file in file_list_savings_accounts:
         with open(file) as f:
             json_data = pd.json_normalize(json.loads(f.read()))
@@ -58,16 +58,6 @@ if __name__ == '__main__':
 
     print("\n")
 
-    # df_accounts[['data.account_id', 'data.name', 'data.address', 'data.phone_number', 'data.email']] \
-    #     = df_accounts[['data.account_id', 'data.name', 'data.address', 'data.phone_number', 'data.email']]\
-    #     .fillna(method='ffill')
-    # df_cards[['data.card_id', 'data.card_number', 'data.credit_used', 'data.monthly_limit', 'data.status']] \
-    #     = df_cards[['data.card_id', 'data.card_number', 'data.credit_used', 'data.monthly_limit', 'data.status']]\
-    #     .fillna(method='ffill')
-    # df_saving_accounts[['data.savings_account_id', 'data.balance', 'data.interest_rate_percent', 'data.status']] \
-    #     = df_saving_accounts[['data.savings_account_id', 'data.balance', 'data.interest_rate_percent', 'data.status']]\
-    #     .fillna(method='ffill')
-
     df_accounts = df_accounts.fillna(method='ffill')
     df_cards = df_cards.fillna(method='ffill')
     df_saving_accounts = df_saving_accounts.fillna(method='ffill')
@@ -75,10 +65,6 @@ if __name__ == '__main__':
     df_result0 = pd.merge(df_accounts, df_cards, how="outer", on='ts').sort_values(by=['ts'])
     df_result1 = pd.merge(df_accounts, df_saving_accounts, how="outer", on='ts').sort_values(by=['ts'])
 
-    # df_result = pd.merge(df_result0, df_result1, how="outer",
-    #                      on=['ts', 'id_x', 'data.account_id', 'data.name', 'data.address', 'data.phone_number',
-    #                     'data.email', 'set.phone_number', 'set.savings_account_id', 'set.address', 'set.email',
-    #                     'set.card_id']).sort_values(by=['ts'])
     df_result = pd.merge(df_result0, df_result1, how="outer",
                          on=['ts']).sort_values(by=['ts'])
 
