@@ -11,16 +11,15 @@ any programming language and any framework to implement the solution.
 1. Visualize the complete historical table view of each tables in tabular format in stdout (hint: print your table)
 
    **SOLUTION** :
-
-   	- Read each file json. collect the data into a list
-   	- Each list of data will be converted into dataframe
-   	- Print each of dataframe
+      - Read each file json. collect the data into a list for each data
+      - Each list of data will be converted into dataframe
+      - Print out each of dataframe
 
 2. Visualize the complete historical table view of the denormalized joined table in stdout by joining these three tables (hint: the join key lies in the `resources` section, please read carefully)
 
    **SOLUTION** :
 
-    - NaN value in dataframe fill using fillna() function with parameter method='ffill'.
+    - Do NaN value in dataframe fill by using fillna() function with parameter method='ffill'.
     - Merge these three tables. firstly, merge accounts and cards. secondly, merge accounts and saving_accounts. then, merge the first and second one.
     - Print result
 
@@ -30,3 +29,4 @@ any programming language and any framework to implement the solution.
    ​	**SOLUTION** :
 
     - can be seen in column `datetime` that there are 7 transactions between 2 January 2020 to 20 January 2020.
+    <img src="result.png" alt="" style="height: 100px; width:100px;"/>
