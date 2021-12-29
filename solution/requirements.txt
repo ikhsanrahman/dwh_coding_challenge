@@ -1,5 +1,2 @@
-pystrich
-json
 pandas
-glob
 tabulate
