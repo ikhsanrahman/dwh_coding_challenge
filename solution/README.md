@@ -2,6 +2,10 @@
 
 ## Author : Ikhsan Rahman Husien
 
+## HOW TO RUN
+- using this command in solution `directory`: `docker-compose up -d`
+- once run, check the logs `docker logs -f solution_dkatalis_test_1`
+
 ## Tasks
 
 To do the following tasks, you probably gonna need some kinds data processing library in your own choice of programming language.
@@ -30,3 +34,4 @@ any programming language and any framework to implement the solution.
 
     - can be seen in column `datetime` that there are 7 transactions between 2 January 2020 to 20 January 2020.
     <img src="result.png" alt="" style="height: 100%; width:100%;"/>
+
